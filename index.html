@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-image: url(https://cdn10.bigcommerce.com/s-9qugz4w/products/19190/images/24085/2679-002156__04072.1461776438.1280.1280.jpg?c=2);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 40%;
+        }
+
+        .name,
+        .you,
+        #trait {
+            font-size: 3em;
+        }
+    </style>
+</head>
+
+<body onclick='applyTrait()'>
+    <div class="container">
+        <span class="name">Аня,</span>
+        <span class="you">ты</span>
+        <span id="trait">(жмак)</span>
+    </div>
+</body>
+<script>
+    const traitsString = 'бархатная,безумнокрасивая,бесподобная,блестящая,богиня,божественная,великолепная,' +
+        'волнительная,волшебная,восхитительная,грациозная,душевная,дивная,добрая,драгоценная,желанная,забавная,' +
+        'игривая,идеальная,изумительная,изящная,клёвая,красивая,ласковая,стройная,лучезарная,манящая,мармеладная,' +
+        'небесная,невообразимая,нежная,ненаглядная,неотразимая,неповторимая,непревзойденная,обаятельная,обворожительная,' +
+        'обольстительная,озорная,ослепительная,отзывчивая,очаровательная,пленительная,пленяющая,оразительная,потрясающая,' +
+        'превосходная,прекрасная,прелестная,прелесть,привлекательная,приятная,моя радость,романтичная,роскошная,симпатичная,' +
+        'сказочная,славная,сладкая,сногшибательная,солнышко,страстная,стройная,талантливая,теплая,трепетная,трогательная,' +
+        'увлекательная,удивительная,улыбчивая,умелая,умная,утонченная,фантастическая,феерическая,феноменальная,хорошая,цветочек,' +
+        'чарующая,чувствительная,чудесная,чудо,экзотическая,элегантная,юморная,яркая'
+
+    const traits = traitsString.split(',')
+
+    const $trait = document.getElementById('trait')
+
+    function applyTrait() {
+        $trait.innerText = traits[Math.floor(Math.random() * traits.length)]
+    }
+</script>
+
+</html>
